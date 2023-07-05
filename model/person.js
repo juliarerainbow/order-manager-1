@@ -1,5 +1,5 @@
 class Person {
-    constructor (name, surname, dob, sex, age){
+    constructor(name, surname, dob, sex, age) {
         this.name = name;
         this.surname = surname;
         this.dob = dob; //Date
@@ -7,7 +7,7 @@ class Person {
         this.age = age; //get
     }
 
-    toString(){
-        
+    toString() {
+        return this.name + '\n' + this.surname + '\n' + this.dob + '\n' + this.sex + '\n' + this.age + '\n';
     }
 }
