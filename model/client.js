@@ -1,6 +1,7 @@
 class Client extends Person {
-    constructor(name, surname, dob, sex, age, address, orderArray = []) {
-        super(name, surname, dob, sex, age)
+
+    constructor(name, surname, dob, gender, address, orderArray = []) {
+        super(name, surname, dob, gender)
         this.address = address;
         this.orderArray = orderArray; //typeofOrders
     }
@@ -11,20 +12,20 @@ class Client extends Person {
             + this.orders + '\n';
     }
 
+    addOrder(order) {
+        this.orderArray.push(order);
+    }
+
     totalExpenses() {
-        let allOrderExpenses = 0;
+        let acc = 0;
 
         for (let i = 0; i < this.orderArray.length; i++) {
             const element = this.orderArray[i];
-
+            acc += element.totalPrice;
         }
-        return allOrderExpenses;
+        return acc;
 
-    }
+        // return this.orderArray.reduce((a,c)=> a + c.totalPrice(),0)
 
-
-
-    addOrder(order) {
-        this.orderArray.push(order);
     }
 }
